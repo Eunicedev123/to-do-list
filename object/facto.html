@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            //factories
+            function createCircle(radius){
+                return{
+                    radius,
+                    draw:function(){
+                        document.write("draw"+"<br>");
+                    },
+                    area:function(){
+                        result=3.14*radius*radius;
+                        document.write(result);
+                    }
+
+                };
+            }
+            const circle=createCircle(2);
+            circle.draw();
+            circle.area();
+            //end of factories
+            //constructor
+            function circle(radius){
+                this.radius=radius;
+                this.drawty=function(){
+                    document.write('lets draw');
+                }
+            }
+            const another= new circle(5);
+            //adding properties
+            function circle(radius){
+                this.radius=radius;
+                this.draw=function(){
+                    document.write('draw');
+                }
+            }
+            const circle=new circle(10);
+            circle.location={x:12};//this how we add a property
+            //alternatively we can use
+            circle['location']={x:12};
+            
+        </script>
+    </body>
+</html>
